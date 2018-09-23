@@ -5,9 +5,49 @@ import java.util.List;
 import javafx.scene.shape.Path;
 
 public class main {
-	List<String> lines = Files.readAllLines(Path p, Charset.defaultCharset());
-}
+	List<String> lines = Files.readAllLines(Path, Charset.defaultCharset());
 
-void writeToFile( Path location, List<String> toWrite ){
-Files.write(location,toWrite,Charset.defaultCharset());
+	public int longLine(List<String> lines) {
+
+	}
+
+public int avgLength
+	{
+		
+	}
+
+public int uniqueTokenInsen
+	{
+
+	}
+
+public int uniqueTokenSen
+	{
+
+	}
+
+public int numToken
+	{
+
+	}
+
+public String freqToken
+	{
+
+	}
+
+public int countFreqTokenInsen
+	{
+
+	}
+
+	public String 10f reqTokenInsen
+	{
+
+	}
+
+	public String 10L FreqTokenInsen
+	{
+
+	}
 }
