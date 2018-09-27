@@ -3,6 +3,7 @@ import java.nio.file.*;
 import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -77,8 +78,19 @@ public class main {
 		return tokens.size();
 	}
 
-	public int numToken() {
-
+	public int numToken(ArrayList<String> lines)
+	{
+		int tokenCount = 0;
+		List<String> tokens = new ArrayList<String>();
+		for (int i = 0; i < lines.size(); i++) {
+			StringTokenizer st = new StringTokenizer(lines.get(i));
+			while (st.hasMoreTokens()) {
+				for (int j = 0; j < tokens.size(); j++) {
+					tokenCount++;
+				}
+			}
+		}
+		return tokenCount;
 	}
 
 	public String freqToken(List<String> lines, List<String> tokens) {
