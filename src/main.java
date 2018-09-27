@@ -1,14 +1,17 @@
 import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.util.List;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Scanner;
 
 import javafx.scene.shape.Path;
 
 public class main {
 	List<String> lines = Files.readAllLines(Path, Charset.defaultCharset());
+	Scanner scan = new Scanner(System.in);
 
 	public int longLine(List<String> lines) {
 		int longest = 0;
@@ -119,14 +122,15 @@ public class main {
 			}
 		}
 	}
-	 public String 10f reqTokenInsen (int n, int k) { 
+
+	public String mostTokenInsen (int n, int k) { 
  		int frequency; //the frequency of each element
  		int size; 
- 		String line = scanner.nextline();
+ 		String line = scan.nextLine();
  		String[] array = line.split(",");
  		int[] numbers = new int[array.length];
  		for (int i = 0; i < n; n++) {
- 			if (k.parseInt(array[i])
+ 			if (k.parseInt(array[i]))
  			frequency++;
  		}
  		return frequency; 
@@ -144,15 +148,17 @@ public class main {
  		}
  		    		
  }
- public String 10L int FreqTokenInsen(int n) { 
+
+	public String leastFreqTokenInsen(int n) { 
  		int k;
  		int frequency; //the frequency of each element
 		int size;
-		String line = scanner.nextline();
+		String line = scan.nextLine();
 		String[] array = line.split(",");
 		int[] numbers = new int[array.length];
 		for (int i = 0; i < n; n++) {
-			if (k.parseInt(array[i])
+			int checker = parseInt(array[i]);
+			if (k = checker)
 			frequency++;
 		}
 		return frequency; 
