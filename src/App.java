@@ -100,29 +100,30 @@ public class App {
 			while (st.hasMoreTokens()) {
 				String pointer = st.nextToken();
 				tokens.add(pointer);
-				}
-		int maxOccuringCharacter;
-		for (int element : lines) {
-			if (lines.get(element) == lines.get(maxOccuringCharacter))
-				;
-			tokens.add(lines.get(element));
-		}
-		for (int value = 0; value < lines.size(); value++) {
-			String line = lines.get(value);
-			String actualQuantity = "";
-			int actualFreqCount;
-			for (int item = 0; item < line.length(); item++) {
-				int tempFreqCount;
-				String tempElement = lines.get(item);
-				for (int element; element < line.length(); element++)
-					if (lines.get(element).equals(tempElement))
-						tempFreqCount++;
-				if (tempFreqCount >= actualFreqCount) {
-					actualQuantity = tempElement;
-					actualFreqCount = tempFreqCount;
-				}
 			}
-			System.out.println(actualFreqCount);
+			int maxOccuringCharacter;
+			for (int element : lines) {
+				if (lines.get(element) == lines.get(maxOccuringCharacter))
+					;
+				tokens.add(lines.get(element));
+			}
+			for (int value = 0; value < lines.size(); value++) {
+				String line = lines.get(value);
+				String actualQuantity = "";
+				int actualFreqCount;
+				for (int item = 0; item < line.length(); item++) {
+					int tempFreqCount;
+					String tempElement = lines.get(item);
+					for (int element; element < line.length(); element++)
+						if (lines.get(element).equals(tempElement))
+							tempFreqCount++;
+					if (tempFreqCount >= actualFreqCount) {
+						actualQuantity = tempElement;
+						actualFreqCount = tempFreqCount;
+					}
+				}
+				System.out.println(actualFreqCount);
+			}
 		}
 	}
 
@@ -214,13 +215,12 @@ public class App {
 			}
 		}
 		String retString = "";
-		for(int k = 0; k < bottom10.size(); k++)
-		{
-			int rank = k+1;
+		for (int k = 0; k < bottom10.size(); k++) {
+			int rank = k + 1;
 			int retIndex = bottom10.get(k);
 			int retCount = counts.get(retIndex);
 			String retToken = tokens.get(retIndex);
-			retString += "#"+rank+": "+retToken+" appeared in the file "+retCount+" times. \n";
+			retString += "#" + rank + ": " + retToken + " appeared in the file " + retCount + " times. \n";
 		}
 		return retString;
 	}
@@ -261,7 +261,7 @@ public class App {
 		String dirPath = System.getProperty("user.dir");
 		Path filePath = (Path) Paths.get(dirPath);
 		List<String> lines = Files.readAllLines((java.nio.file.Path) filePath, Charset.defaultCharset());
-		List<String> retArray;
+		ArrayList<String> retArray = new ArrayList<String>();
 		String longLine = "The longest line in the file is " + longLine(lines) + "characters long";
 		retArray.add(longLine);
 		String avgLength = "The average line length in the file is " + avgLength(lines) + " characters long";
@@ -290,7 +290,7 @@ public class App {
 		String dirPath = System.getProperty("user.dir");
 		Path filePath = (Path) Paths.get(dirPath);
 		List<String> lines1 = Files.readAllLines((java.nio.file.Path) filePath, Charset.defaultCharset());
-		List<String> retArray;
+		ArrayList<String> retArray = new ArrayList<String>();
 		String longLine = "The longest line in the file is " + longLine(lines1) + "characters long";
 		retArray.add(longLine);
 		String avgLength = "The average line length in the file is " + avgLength(lines1) + " characters long";
