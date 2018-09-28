@@ -3,6 +3,7 @@ import java.nio.file.*;
 import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -149,45 +150,35 @@ public class main {
 		    		
 }
 public String int FreqTokenInsen(int n) { 
-		int k;
-		int frequency; //the frequency of each element
-	int size;
-	String line = scanner.nextline();
-	String[] token = line.split(",");
-	String[] count = line.split(",");
-	int[] indices = {10};
-	int[] numbers = new int[token.length];
-	int[] countTwo = new int[count.length];
-	for (int i = 0; i < n; n++) {
-		if (k == (token[i])
-		frequency++;
-	}
-	if (countTwo == null) {
-		return -1;
-	}
-	int Countlength = countTwo.length;
-	int i = 0;
-	while (i < Countlength) {
-		if (countTwo[i] == indices[10]) {
-			countTwo[i] = numbers.get(i);
-		}
-		else {
-			return i = i + 1;
-		}
-	}
-	
-	return frequency; 
-	for (int curIndex = 0; curIndex < numbers.length; curIndex++) { //puts the frequency of each element in an algorithm from most to least
-		int leastFrequent = curIndex;
-		int[] toSort;
-		for (int theIndex = curIndex + 1; theIndex < numbers.length; theIndex++) {
-			if (toSort[theIndex] < toSort[leastFrequent])
-				leastFrequent = theIndex;			
-		}
-		int tempHold = toSort[leastFrequent];
-		toSort[leastFrequent] = toSort[curIndex]; 
-		toSort[curIndex] = tempHold;
-}
+	 public String int FreqTokenInsen(int n) { 
+	    	ArrayList<String> token = new ArrayList<String>();
+	    	ArrayList<String> count = new ArrayList<String>();
+	    	ArrayList<String> indices = new ArrayList<String>();
+	    		for (int i = 0; i < count.size(); i++) {
+	    			String temp = count.get(i);
+	    			count.set(i, temp + 1); 
+	    		while (i > 0) { 
+	    			if (count.indexOf(i) == 0) {
+	    				return 1;
+	    			}
+	    			else if (count.indexOf(i) == indices.indexOf(i))
+	    				return i;
+	    			}
+	    		}
+	    		token.sort(new Comparator<String>() {
+	    		@Override
+	    			public int compare(<String> token, <String> count) {
+	    			return token.compareTo(count);
+	    		}
+	    		});
+	    		
+	    		System.out.println("\n10 least frequently occurring token: ");
+	    		System.out.printf("%20s:%03d","Token", "Count");
+	    		int least = token.size(); 
+	    		int count = 0;
+	    		for (int i = 0; i < least && count < 10; i++, count++) {
+	    			String.format("%20s:%03d", token.get(i), count.get(i));
+	    		}
 }
 }
 }
