@@ -6,14 +6,11 @@ import java.util.StringTokenizer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Scanner;
-
 import javafx.scene.shape.Path;
 
 public class App {
 
 	List<String> tokens;
-	Scanner scan = new Scanner(System.in);
 
 	public int longLine(List<String> lines) {
 		int longest = 0;
@@ -225,8 +222,7 @@ public class App {
 		return retString;
 	}
 
-	public String leastFreqTokenInsen(List<String> lines) {
-		 public String int FreqTokenInsen(int n) { 
+	public String leastFreqTokenInsen(int n) { 
 		    	ArrayList<String> token = new ArrayList<String>();
 		    	ArrayList<String> count = new ArrayList<String>();
 		    	ArrayList<String> indices = new ArrayList<String>();
@@ -278,7 +274,7 @@ public class App {
 		retArray.add(freqToken);
 		String freqTokenInsen = "The count of the most frequent token is" + freqTokenInsen(lines);
 		retArray.add(freqTokenInsen);
-		String mostTokenInsen = mostTokenInsen(null, null);
+		String mostTokenInsen = mostTokenInsen(lines);
 		retArray.add(mostTokenInsen);
 		String leastFreqTokenInsen = leastFreqTokenInsen(lines);
 		retArray.add(leastFreqTokenInsen);
