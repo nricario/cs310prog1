@@ -216,7 +216,7 @@ public class App{
 		retArray.add(freqToken);
 		String freqTokenInsen = "The count of the most frequent token is" +freqTokenInsen(lines);
 		retArray.add(freqTokenInsen);
-		String mostTokenInsen = mostTokenInsen(lines);
+		String mostTokenInsen = mostTokenInsen(null, null);
 		retArray.add(mostTokenInsen);
 		String leastFreqTokenInsen = leastFreqTokenInsen(lines);
 		retArray.add(leastFreqTokenInsen);
