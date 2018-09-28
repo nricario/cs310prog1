@@ -11,9 +11,9 @@ import java.util.Scanner;
 import javafx.scene.shape.Path;
 
 public class App{
-	List<String> lines = Files.readAllLines(Path, Charset.defaultCharset());
+	
+	List<String> tokens;
 	Scanner scan = new Scanner(System.in);
-
 	public int longLine(List<String> lines) {
 		int longest = 0;
 		for (int i = 0; i < lines.size(); i++) {
@@ -37,7 +37,7 @@ public class App{
 	}
 
 	public int uniqueTokenInsen(List<String> lines) {
-		List<String> tokens;
+		ArrayList<String> tokens = new ArrayList<String>();
 		for (int i = 0; i < lines.size(); i++) {
 			StringTokenizer st = new StringTokenizer(lines.get(i));
 			while (st.hasMoreTokens()) {
@@ -58,7 +58,7 @@ public class App{
 	}
 
 	public int uniqueTokenSen(List<String> lines) {
-		List<String> tokens;
+		ArrayList<String> tokens = new ArrayList<String>();
 		for (int i = 0; i < lines.size(); i++) {
 			StringTokenizer st = new StringTokenizer(lines.get(i));
 			while (st.hasMoreTokens()) {
@@ -93,7 +93,7 @@ public class App{
 	}
 
 	public String freqToken(List<String> lines) {
-		List<String> tokens;
+		ArrayList<String> tokens = new ArrayList<String>();
 		for (int i = 0; i < lines.size(); i++) {
 			StringTokenizer st = new StringTokenizer(lines.get(i));
 			while (st.hasMoreTokens()) {
@@ -139,9 +139,10 @@ public class App{
 				}
 			}
 		}
+		return null;
 	}
 
-	public String mostTokenInsen(List<String> lines) {
+	public String mostTokenInsen(int k, int n) {
 		int frequency; // the frequency of each element
 		int size;
 		String line = scan.nextLine();
@@ -193,11 +194,13 @@ public class App{
 			int tempHold = toSort[leastFrequent];
 			toSort[leastFrequent] = toSort[curIndex];
 			toSort[curIndex] = tempHold;
-		}
-				
+		}	
 	}
+
 	public List<String> main() {
-		List<String> lines = Files.readAllLines(Path, Charset.defaultCharset());
+		String dirPath = System.getProperty("user.dir");
+		Path filePath = (Path) Paths.get(dirPath);
+		List<String> lines = Files.readAllLines((java.nio.file.Path) filePath, Charset.defaultCharset());
 		List<String> retArray;
 		String longLine = "The longest line in the file is "+longLine(lines)+"characters long";
 		retArray.add(longLine);
@@ -222,24 +225,27 @@ public class App{
 	}
 	public List<String> main (List<String> lines)
 	{
+		String dirPath = System.getProperty("user.dir");
+		Path filePath = (Path) Paths.get(dirPath);
+		List<String> lines1 = Files.readAllLines((java.nio.file.Path) filePath, Charset.defaultCharset());
 		List<String> retArray;
-		String longLine = "The longest line in the file is "+longLine(lines)+"characters long";
+		String longLine = "The longest line in the file is "+longLine(lines1)+"characters long";
 		retArray.add(longLine);
-		String avgLength = "The average line length in the file is "+ avgLength(lines)+" characters long";
+		String avgLength = "The average line length in the file is "+ avgLength(lines1)+" characters long";
 		retArray.add(avgLength);
-		String uniqueTokenInsen = "The # of unique, space-delineated (case-insensitive) tokens in this file is: "+uniqueTokenInsen(lines);
+		String uniqueTokenInsen = "The # of unique, space-delineated (case-insensitive) tokens in this file is: "+uniqueTokenInsen(lines1);
 		retArray.add(uniqueTokenInsen);
-		String uniqueTokenSen = "The # of unique, space-delineated (case-sensitive) token in this file is: "+uniqueTokenSen(lines);
+		String uniqueTokenSen = "The # of unique, space-delineated (case-sensitive) token in this file is: "+uniqueTokenSen(lines1);
 		retArray.add(uniqueTokenSen);
-		String numToken = "The # of all tokens in this file is "+numToken(lines);
+		String numToken = "The # of all tokens in this file is "+numToken(lines1);
 		retArray.add(numToken);
-		String freqToken = "The most frequent token(s) in the file is/are: "+freqTokenInsen(lines);
+		String freqToken = "The most frequent token(s) in the file is/are: "+freqTokenInsen(lines1);
 		retArray.add(freqToken);
-		String freqTokenInsen = "The count of the most frequent token is" +freqTokenInsen(lines);
+		String freqTokenInsen = "The count of the most frequent token is" +freqTokenInsen(lines1);
 		retArray.add(freqTokenInsen);
-		String mostTokenInsen = mostTokenInsen(lines);
+		String mostTokenInsen = mostTokenInsen(lines1);
 		retArray.add(mostTokenInsen);
-		String leastFreqTokenInsen = leastFreqTokenInsen(lines);
+		String leastFreqTokenInsen = leastFreqTokenInsen(lines1);
 		retArray.add(leastFreqTokenInsen);
 		return retArray;
 	}
