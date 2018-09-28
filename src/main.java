@@ -124,54 +124,70 @@ public class main {
 	}
 
 	public String mostTokenInsen (int n, int k) { 
- 		int frequency; //the frequency of each element
- 		int size; 
- 		String line = scan.nextLine();
- 		String[] token = line.split(",");
- 		int[] numbers = new int[token.length];
- 		for (int i = 0; i < n; n++) {
- 			if (k.parseInt(token[i]))
- 			frequency++;
- 		}
- 		return frequency; 
- 		for (int curIndex = 0; curIndex < length; curIndex++) { //puts the frequency of each element in an algorithm from most to least
- 			int mostFrequent = curIndex;
- 			int[] toSort;
-				for (int theIndex = curIndex + 1; theIndex < length; theIndex++) {
- 				if (toSort[theIndex] > toSort[mostFrequent])
- 					mostFrequent = theIndex;			
- 			}
- 			int tempHold = toSort[mostFrequent];
- 			toSort[mostFrequent] = toSort[curIndex]; 
- 			toSort[curIndex] = tempHold;
- 			
- 		}
- 		    		
- }
-
-	public String leastFreqTokenInsen(int n) { 
- 		int k;
- 		int frequency; //the frequency of each element
-		int size;
-		String line = scan.nextLine();
+		int frequency; //the frequency of each element
+		int size; 
+		String line = scanner.nextline();
 		String[] array = line.split(",");
 		int[] numbers = new int[array.length];
 		for (int i = 0; i < n; n++) {
-			int checker = parseInt(array[i]);
-			if (k = checker)
+			if (k.parseInt(array[i])
 			frequency++;
 		}
 		return frequency; 
-		for (int curIndex = 0; curIndex < numbers.length; curIndex++) { //puts the frequency of each element in an algorithm from most to least
-			int leastFrequent = curIndex;
+		for (int curIndex = 0; curIndex < length; curIndex++) { //puts the frequency of each element in an algorithm from most to least
+			int mostFrequent = curIndex;
 			int[] toSort;
-			for (int theIndex = curIndex + 1; theIndex < numbers.length; theIndex++) {
-				if (toSort[theIndex] < toSort[leastFrequent])
-					leastFrequent = theIndex;			
+			for (int theIndex = curIndex + 1; theIndex < length; theIndex++) {
+				if (toSort[theIndex] > toSort[mostFrequent])
+					mostFrequent = theIndex;			
 			}
-			int tempHold = toSort[leastFrequent];
-			toSort[leastFrequent] = toSort[curIndex]; 
+			int tempHold = toSort[mostFrequent];
+			toSort[mostFrequent] = toSort[curIndex]; 
 			toSort[curIndex] = tempHold;
+			
 		}
+		    		
+}
+public String int FreqTokenInsen(int n) { 
+		int k;
+		int frequency; //the frequency of each element
+	int size;
+	String line = scanner.nextline();
+	String[] token = line.split(",");
+	String[] count = line.split(",");
+	int[] indices = {10};
+	int[] numbers = new int[token.length];
+	int[] countTwo = new int[count.length];
+	for (int i = 0; i < n; n++) {
+		if (k == (token[i])
+		frequency++;
+	}
+	if (countTwo == null) {
+		return -1;
+	}
+	int Countlength = countTwo.length;
+	int i = 0;
+	while (i < Countlength) {
+		if (countTwo[i] == indices[10]) {
+			countTwo[i] = numbers.get(i);
+		}
+		else {
+			return i = i + 1;
+		}
+	}
+	
+	return frequency; 
+	for (int curIndex = 0; curIndex < numbers.length; curIndex++) { //puts the frequency of each element in an algorithm from most to least
+		int leastFrequent = curIndex;
+		int[] toSort;
+		for (int theIndex = curIndex + 1; theIndex < numbers.length; theIndex++) {
+			if (toSort[theIndex] < toSort[leastFrequent])
+				leastFrequent = theIndex;			
+		}
+		int tempHold = toSort[leastFrequent];
+		toSort[leastFrequent] = toSort[curIndex]; 
+		toSort[curIndex] = tempHold;
+}
+}
 }
 }
