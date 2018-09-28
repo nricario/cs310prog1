@@ -127,10 +127,10 @@ public class main {
  		int frequency; //the frequency of each element
  		int size; 
  		String line = scan.nextLine();
- 		String[] array = line.split(",");
- 		int[] numbers = new int[array.length];
+ 		String[] token = line.split(",");
+ 		int[] numbers = new int[token.length];
  		for (int i = 0; i < n; n++) {
- 			if (k.parseInt(array[i]))
+ 			if (k.parseInt(token[i]))
  			frequency++;
  		}
  		return frequency; 
