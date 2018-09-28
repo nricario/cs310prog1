@@ -1,12 +1,22 @@
+package edu.sdsu.cs;
+import java.io.IOException;
 import java.nio.charset.Charset;
-import java.nio.file.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import javafx.scene.shape.Path;
+
+/*
+ * Collaborators: Nick Ricario and Krishna Nirmal
+ * 
+ * App.java is designed to run analytics on text-based files, returning 
+ * a file labeled "App.java.stats", which displays the analytics in a formatted fashion. 
+ */
 
 public class App {
 
@@ -222,7 +232,7 @@ public class App {
 		return retString;
 	}
 
-	public String leastFreqTokenInsen(int n) { 
+	public String leastFreqTokenInsen(List<String> lines) { 
 		    	ArrayList<String> token = new ArrayList<String>();
 		    	ArrayList<String> count = new ArrayList<String>();
 		    	ArrayList<String> indices = new ArrayList<String>();
@@ -252,10 +262,14 @@ public class App {
 		    			String.format("%20s:%03d", token.get(i), count.get(i));
 		}
 	}
+	
+	void writeToFile( Path location, List<String> toWrite ) throws IOException{
+		Files.write(location,toWrite,Charset.defaultCharset());
+		}
 
-	public List<String> main() {
-		String dirPath = System.getProperty("user.dir");
-		Path filePath = (Path) Paths.get(dirPath);
+
+	public void main() throws IOException {
+		Path filePath = (Path) Paths.get("cs310prog1");
 		List<String> lines = Files.readAllLines((java.nio.file.Path) filePath, Charset.defaultCharset());
 		ArrayList<String> retArray = new ArrayList<String>();
 		String longLine = "The longest line in the file is " + longLine(lines) + "characters long";
@@ -278,13 +292,12 @@ public class App {
 		retArray.add(mostTokenInsen);
 		String leastFreqTokenInsen = leastFreqTokenInsen(lines);
 		retArray.add(leastFreqTokenInsen);
-		return retArray;
-
+		Path retPath = Paths.get("App.java.stats");
+		writeToFile(retPath, retArray);
 	}
 
-	public List<String> main(List<String> lines) {
-		String dirPath = System.getProperty("user.dir");
-		Path filePath = (Path) Paths.get(dirPath);
+	public void main(String path) throws IOException {
+		Path filePath = Paths.get(path);
 		List<String> lines1 = Files.readAllLines((java.nio.file.Path) filePath, Charset.defaultCharset());
 		ArrayList<String> retArray = new ArrayList<String>();
 		String longLine = "The longest line in the file is " + longLine(lines1) + "characters long";
@@ -307,6 +320,7 @@ public class App {
 		retArray.add(mostTokenInsen);
 		String leastFreqTokenInsen = leastFreqTokenInsen(lines1);
 		retArray.add(leastFreqTokenInsen);
-		return retArray;
+		Path retPath = Paths.get("App.java.stats");
+		writeToFile(retPath, retArray);
 	}
 }
