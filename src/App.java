@@ -226,30 +226,34 @@ public class App {
 	}
 
 	public String leastFreqTokenInsen(List<String> lines) {
-		int n = lines.size();
-		int k;
-		int frequency; // the frequency of each element
-		int size;
-		String line = scan.nextLine();
-		String[] array = line.split(",");
-		int[] numbers = new int[array.length];
-		for (int i = 0; i < n; n++) {
-			int checker = parseInt(array[i]);
-			if (k = checker)
-				frequency++;
-		}
-		return frequency;
-		for (int curIndex = 0; curIndex < numbers.length; curIndex++) { // puts the frequency of each element in an
-																		// algorithm from most to least
-			int leastFrequent = curIndex;
-			int[] toSort;
-			for (int theIndex = curIndex + 1; theIndex < numbers.length; theIndex++) {
-				if (toSort[theIndex] < toSort[leastFrequent])
-					leastFrequent = theIndex;
-			}
-			int tempHold = toSort[leastFrequent];
-			toSort[leastFrequent] = toSort[curIndex];
-			toSort[curIndex] = tempHold;
+		 public String int FreqTokenInsen(int n) { 
+		    	ArrayList<String> token = new ArrayList<String>();
+		    	ArrayList<String> count = new ArrayList<String>();
+		    	ArrayList<String> indices = new ArrayList<String>();
+		    		for (int i = 0; i < count.size(); i++) {
+		    			String temp = count.get(i);
+		    			count.set(i, temp + 1); 
+		    		while (i > 0) { 
+		    			if (count.indexOf(i) == 0) {
+		    				return 1;
+		    			}
+		    			else if (count.indexOf(i) == indices.indexOf(i))
+		    				return i;
+		    			}
+		    		}
+		    		token.sort(new Comparator<String>() {
+		    		@Override
+		    			public int compare(<String> token, <String> count) {
+		    			return token.compareTo(count);
+		    		}
+		    		});
+		    		
+		    		System.out.println("\n10 least frequently occurring token: ");
+		    		System.out.printf("%20s:%03d","Token", "Count");
+		    		int least = token.size(); 
+		    		int count = 0;
+		    		for (int i = 0; i < least && count < 10; i++, count++) {
+		    			String.format("%20s:%03d", token.get(i), count.get(i));
 		}
 	}
 
