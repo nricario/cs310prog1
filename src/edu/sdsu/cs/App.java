@@ -108,11 +108,11 @@ public class App {
 				String pointer = st.nextToken();
 				tokens.add(pointer);
 			}
-			int maxOccuringCharacter;
-			for (int element : lines) {
-				if (lines.get(element) == lines.get(maxOccuringCharacter))
+			for (String element : lines) {
+				int j = Integer.parseInt(element);
+				if (lines.get(j) == lines.get(maxOccuringCharacter))
 					;
-				tokens.add(lines.get(element));
+				tokens.add(lines.get(j));
 			}
 			for (int value = 0; value < lines.size(); value++) {
 				String line = lines.get(value);
