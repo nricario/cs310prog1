@@ -1,5 +1,4 @@
 package edu.sdsu.cs;
-
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -111,7 +110,7 @@ public class App {
 			}
 			for (String element : lines) {
 				int j = Integer.parseInt(element);
-				if (lines.get(j) == lines.get(maxOccuringCharacter))
+				if (lines.get(j) == lines.get(i))
 					;
 				tokens.add(lines.get(j));
 			}
@@ -234,7 +233,61 @@ public class App {
 		}
 		return retString;
 	}
+	public String leastFreqTokenInsen(List<String> lines) {
+		ArrayList<String> token = new ArrayList<String>();
+		ArrayList<String> count = new ArrayList<String>();
+		ArrayList<String> indices = new ArrayList<String>();
+		String uniqueCount;
+		Boolean outcome = false; 
 
+	for (String s: lines) {
+		outcome = false;
+		for (int i = 0; i < token.size(); i++) {
+			if (s.equalsIgnoreCase(token.get(i))) {
+			uniqueCount = count.get(i);
+			count.remove(i);
+			count.add(i, uniqueCount + 1);
+			outcome = true;
+			break;
+		}
+		}
+		if (!outcome) {
+			token.add(s);
+			count.add(1, s);
+		}	
+	}	
+		for (int i = 0; i < count.size(); i++) {
+			for (int j = i + 1; j < count.size(); j++) {
+				String indexOne = count.get(i);
+				String indexTwo = count.get(j);
+				if(indexOne.equals(indexTwo)){
+					String temp1 = count.get(i);
+					String temp2 = count.get(j);
+					count.remove(i);
+					count.add(i, temp2);
+					count.remove(j);
+					count.add(j, temp1);
+					String temp3 = token.get(i);
+					String temp4 = token.get(i);
+					token.remove(i);
+					token.add(i,temp4);
+					token.remove(j);
+					token.add(j,temp3);
+					}	
+					}
+			String showTheString = "";
+			for (int index = 0; index < indices.size(); index++) {
+				int indexPlacement;
+				indexPlacement = index + 1; 
+				String showIndex = indices.get(index);
+				int k = Integer.parseInt(showIndex);
+				String showCount = count.get(k);
+				int l = Integer.parseInt(showCount);
+				String showToken = count.get(l);
+				showTheString += "#" + indexPlacement + ": " + showToken + " appeared in the file " + showCount + " times. \n";
+				}
+			return showTheString;
+<<<<<<< HEAD:src/App.java
 public String leastFreqTokenInsen(List<String> lines) {
 	ArrayList<String> token = new ArrayList<String>();
 	ArrayList<String> count = new ArrayList<String>();
@@ -289,12 +342,14 @@ for (String s: lines) {
 			showTheString += "#" + indexPlacement + ": " + showToken + " appeared in the file " + showCount + " times. \n";
 			}
 		return showTheString;
+	}
+}
+>>>>>>> f92275d42422538f75813752fd99c2b453172f07:src/edu/sdsu/cs/App.java
+	
+	void writeToFile( Path location, List<String> toWrite ) throws IOException{
+		Files.write(location,toWrite,Charset.defaultCharset());
 		}
-	}
 
-	void writeToFile(Path location, List<String> toWrite) throws IOException {
-		Files.write(location, toWrite, Charset.defaultCharset());
-	}
 
 	public void main() throws IOException {
 		Path filePath = (Path) Paths.get("cs310prog1");
