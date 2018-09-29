@@ -254,63 +254,6 @@ for (String s: lines) {
 		break;
 	}
 =======
-
-	public String leastFreqTokenInsen(List<String> lines) {
-		ArrayList<String> token = new ArrayList<String>();
-		ArrayList<String> count = new ArrayList<String>();
-		ArrayList<String> indices = new ArrayList<String>();
-		String uniqueCount;
-		Boolean outcome = false;
-
-		for (String s : lines) {
-			outcome = false;
-			for (int i = 0; i < token.size(); i++) {
-				if (s.equalsIgnoreCase(token.get(i))) {
-					uniqueCount = count.get(i);
-					count.remove(i);
-					count.add(i, uniqueCount + 1);
-					outcome = true;
-					break;
-				}
-			}
-			if (!outcome) {
-				token.add(s);
-				count.add(1, s);
-			}
-		}
-		for (int i = 0; i < count.size(); i++) {
-			for (int j = i + 1; j < count.size(); j++) {
-				String indexOne = count.get(i);
-				String indexTwo = count.get(j);
-				if (indexOne.equals(indexTwo)) {
-					String temp1 = count.get(i);
-					String temp2 = count.get(j);
-					count.remove(i);
-					count.add(i, temp2);
-					count.remove(j);
-					count.add(j, temp1);
-					String temp3 = token.get(i);
-					String temp4 = token.get(i);
-					token.remove(i);
-					token.add(i, temp4);
-					token.remove(j);
-					token.add(j, temp3);
-				}
-			}
-			String showTheString = "";
-			for (int index = 0; index < indices.size(); index++) {
-				int indexPlacement;
-				indexPlacement = index + 1;
-				String showIndex = indices.get(index);
-				int k = Integer.parseInt(showIndex);
-				String showCount = count.get(k);
-				int l = Integer.parseInt(showCount);
-				String showToken = count.get(l);
-				showTheString += "#" + indexPlacement + ": " + showToken + " appeared in the file " + showCount
-						+ " times. \n";
-			}
-			return showTheString;
-		}
 >>>>>>> 67bedf31a0b94b4c359a21eef0caf6c7d230ef71
 	}
 
