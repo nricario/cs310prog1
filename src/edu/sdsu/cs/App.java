@@ -235,28 +235,6 @@ public class App {
 		}
 		return retString;
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD:src/App.java
-public String leastFreqTokenInsen(List<String> lines) {
-	ArrayList<String> token = new ArrayList<String>();
-	ArrayList<String> count = new ArrayList<String>();
-	ArrayList<String> indices = new ArrayList<String>();
-	String uniqueCount;
-	Boolean outcome = false; 
-
-for (String s: lines) {
-	outcome = false;
-	for (int i = 0; i < token.size(); i++) {
-		if (s.equalsIgnoreCase(token.get(i))) {
-		uniqueCount = count.get(i);
-		count.remove(i);
-		count.add(i, uniqueCount + 1);
-		outcome = true;
-		break;
-	}
-=======
->>>>>>> 67bedf31a0b94b4c359a21eef0caf6c7d230ef71
-	}
 
 	public String leastFreqTokenInsen(List<String> lines) {
 		ArrayList<String> token = new ArrayList<String>();
@@ -312,7 +290,11 @@ for (String s: lines) {
 						+ " times. \n";
 			}
 		}
+<<<<<<< HEAD
 		return showTheString;
+=======
+		
+>>>>>>> fff4a0a044cf40b2a1efe25f216c012b0d56a35d
 	}
 
 	void writeToFile(Path location, List<String> toWrite) throws IOException {
