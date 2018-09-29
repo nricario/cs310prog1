@@ -133,7 +133,7 @@ public class App {
 					}
 				}
 			}
-	return tokens;
+	return element;
 		}
 	}
 	public int freqTokenInsen(List<String> lines) {
@@ -290,6 +290,9 @@ public class App {
 						+ " times. \n";
 			}
 		}
+	return showTheString;
+	}
+}
 <<<<<<< HEAD
 		return showTheString;
 =======
