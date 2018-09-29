@@ -102,40 +102,39 @@ public class App {
 	}
 
 	public String freqToken(List<String> lines) {
-		public String freqToken(List<String> lines) {
-			ArrayList<String> tokens = new ArrayList<String>();
-			for (int i = 0; i < lines.size(); i++) {
-				StringTokenizer st = new StringTokenizer(lines.get(i));
-				while (st.hasMoreTokens()) {
-					String pointer = st.nextToken();
-					tokens.add(pointer);
-				}
-				for (String element : lines) {
-					int j = Integer.parseInt(element);
-					if (lines.get(j) == lines.get(i))
-						;
-					tokens.add(lines.get(j));
-				}
-				for (int value = 0; value < lines.size(); value++) {
-					String line = lines.get(value);
-					String actualQuantity = "";
-					int actualFreqCount = 0;
-					for (int item = 0; item < line.length(); item++) {
-						int tempFreqCount = 0;
-						String tempElement = lines.get(item);
-						for (int element = 0; element < line.length(); element++)
-							if (lines.get(element).equals(tempElement))
-								tempFreqCount++;
-						if (tempFreqCount >= actualFreqCount) {
-							actualQuantity = tempElement;
-							actualFreqCount = tempFreqCount;
-						}
+		ArrayList<String> tokens = new ArrayList<String>();
+		for (int i = 0; i < lines.size(); i++) {
+			StringTokenizer st = new StringTokenizer(lines.get(i));
+			while (st.hasMoreTokens()) {
+				String pointer = st.nextToken();
+				tokens.add(pointer);
+			}
+			for (String element : lines) {
+				int j = Integer.parseInt(element);
+				if (lines.get(j) == lines.get(i))
+					;
+				tokens.add(lines.get(j));
+			}
+			for (int value = 0; value < lines.size(); value++) {
+				String line = lines.get(value);
+				String actualQuantity = "";
+				int actualFreqCount = 0;
+				for (int item = 0; item < line.length(); item++) {
+					int tempFreqCount = 0;
+					String tempElement = lines.get(item);
+					for (int element = 0; element < line.length(); element++)
+						if (lines.get(element).equals(tempElement))
+							tempFreqCount++;
+					if (tempFreqCount >= actualFreqCount) {
+						actualQuantity = tempElement;
+						actualFreqCount = tempFreqCount;
 					}
 				}
 			}
-	return tokens;
 		}
+		return tokens;
 	}
+
 	public int freqTokenInsen(List<String> lines) {
 		ArrayList<String> bucket = new ArrayList<String>();
 		for (int value = 0; value < lines.size(); value++) {
@@ -290,11 +289,6 @@ public class App {
 						+ " times. \n";
 			}
 		}
-<<<<<<< HEAD
-		return showTheString;
-=======
-		
->>>>>>> fff4a0a044cf40b2a1efe25f216c012b0d56a35d
 	}
 
 	void writeToFile(Path location, List<String> toWrite) throws IOException {
