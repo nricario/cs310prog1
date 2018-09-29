@@ -6,11 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 
 /*
  * Collaborators: Nick Ricario and Krishna Nirmal
@@ -103,6 +100,7 @@ public class App {
 
 	public String freqToken(List<String> lines) {
 		ArrayList<String> tokens = new ArrayList<String>();
+		String tempElement = "";
 		for (int i = 0; i < lines.size(); i++) {
 			StringTokenizer st = new StringTokenizer(lines.get(i));
 			while (st.hasMoreTokens()) {
@@ -121,7 +119,7 @@ public class App {
 				int actualFreqCount = 0;
 				for (int item = 0; item < line.length(); item++) {
 					int tempFreqCount = 0;
-					String tempElement = lines.get(item);
+					tempElement = lines.get(item);
 					for (int element = 0; element < line.length(); element++)
 						if (lines.get(element).equals(tempElement))
 							tempFreqCount++;
@@ -131,12 +129,8 @@ public class App {
 					}
 				}
 			}
-<<<<<<< HEAD
-	return element;
-=======
->>>>>>> d32044d8b9dee33d80b6fe2ee496d23e9199c4a2
 		}
-		return tokens;
+		return tempElement;
 	}
 
 	public int freqTokenInsen(List<String> lines) {
@@ -293,17 +287,8 @@ public class App {
 						+ " times. \n";
 			}
 		}
-<<<<<<< HEAD
-	return showTheString;
-	}
-}
-<<<<<<< HEAD
+
 		return showTheString;
-=======
-		
->>>>>>> fff4a0a044cf40b2a1efe25f216c012b0d56a35d
-=======
->>>>>>> d32044d8b9dee33d80b6fe2ee496d23e9199c4a2
 	}
 
 	void writeToFile(Path location, List<String> toWrite) throws IOException {
