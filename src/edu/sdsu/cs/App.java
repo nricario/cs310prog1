@@ -1,4 +1,5 @@
 package edu.sdsu.cs;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -231,7 +232,6 @@ public class App {
 		return retString;
 	}
 
-<<<<<<< HEAD:src/App.java
 	public String leastFreqTokenInsen(List<String> lines) {
 		ArrayList<String> token = new ArrayList<String>();
 		ArrayList<String> count = new ArrayList<String>();
@@ -284,7 +284,8 @@ public class App {
 				showTheString += "#" + indexPlacement + ": " + showToken + " appeared in the file " + showCount + " times. \n";
 				}
 			return showTheString;
-=======
+		}
+
 	public String leastFreqTokenInsen(List<String> lines) { 
 		    	ArrayList<String> token = new ArrayList<String>();
 		    	ArrayList<String> count = new ArrayList<String>();
@@ -313,14 +314,12 @@ public class App {
 		    		int count = 0;
 		    		for (int i = 0; i < least && count < 10; i++, count++) {
 		    			String.format("%20s:%03d", token.get(i), count.get(i));
->>>>>>> f92275d42422538f75813752fd99c2b453172f07:src/edu/sdsu/cs/App.java
 		}
 	}
-	
-	void writeToFile( Path location, List<String> toWrite ) throws IOException{
-		Files.write(location,toWrite,Charset.defaultCharset());
-		}
 
+	void writeToFile(Path location, List<String> toWrite) throws IOException {
+		Files.write(location, toWrite, Charset.defaultCharset());
+	}
 
 	public void main() throws IOException {
 		Path filePath = (Path) Paths.get("cs310prog1");
